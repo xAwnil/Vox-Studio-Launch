@@ -1,0 +1,220 @@
+@import "font.css";
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro');
+
+body {
+    border-radius: 100px;
+    background-color: none;
+    font-family: "Poppins";
+    letter-spacing: 0px;
+    -webkit-app-region: drag;
+    user-select: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.main-app{
+    width: 100%;
+    height: 100%;
+    background-color: #1e1f29;
+    border-radius: 20px;
+    background-image: url(https://www.linkpicture.com/q/Background_2.jpg);
+    background-repeat: no-repeat;
+    background-size: 400px 250px;
+}
+
+
+h4{
+    position: absolute;
+    top: 10px;
+    width: 110px;
+    left:145px;
+    font-family: verdana;
+    text-align: center;
+    font-size: 11px;
+    color: rgb(255, 255, 255);
+}
+
+
+.splash {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 140px;
+    height: 140px;
+    transition: opacity .3s, top 1.5s;
+    opacity: 0;
+}
+
+.img-background {
+    position: absolute;
+    top: 50px;
+    left: 7%;
+    width: 340px;
+    height: 170px;
+    border-radius: 10px;
+  }
+
+.splash.opacity {
+    opacity: 1;
+}
+
+.splash.translate {
+    top: 129px;
+}
+
+.splash-message {
+    position: absolute;
+    top: 270px;
+    left: 0px;
+    width: 400px;
+    font-family: verdana;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    letter-spacing: 0px;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.splash-message.opacity {
+    opacity: 1;
+}
+
+.splash-author {
+    position: absolute;
+    top: 326px;
+    left: 0px;
+    width: 400px;
+    text-align: center;
+    transition: opacity 1.5s;
+    font: normal normal normal 9px/13px Poppins;
+    color: rgb(97, 192, 176);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.splash-author .author {
+    font: normal normal bold 9px/13px Poppins;
+}
+
+.splash-author.opacity {
+    opacity: 0;
+}
+
+.message {
+    position: absolute;
+    top: 347px;
+    left: 0px;
+    width: 400px;
+    text-align: center;
+    transition: opacity 3s;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 27px;
+    letter-spacing: 5px;
+    word-spacing: -1px;
+    color: rgb(82, 232, 255);
+    font-size: 18px;
+    color: rgb(95, 177, 180);
+    opacity: 0;
+}
+
+.message.opacity {
+    opacity: 1;
+}
+
+progress {
+    position: absolute;
+    top: 410px;
+    left: 106px;
+    width: 189px;
+    height: 10px;
+    appearance: none;
+    transition: opacity .2s;
+    opacity: 0;
+}
+
+progress.show {
+    opacity: 1;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+}
+
+
+body .loading-container {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+  }
+
+  body .loading-container .loading-circle {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  body .loading-container .loading-circle:nth-child(1), body .loading-container .loading-circle:nth-child(3), body .loading-container .loading-circle:nth-child(5) {
+    background-color: #51807d;
+    -webkit-animation: bounce 500ms infinite;
+            animation: bounce 500ms infinite;
+  }
+  body .loading-container .loading-circle:nth-child(2), body .loading-container .loading-circle:nth-child(4), body .loading-container .loading-circle:nth-child(6) {
+    background-color: #51807d;
+    -webkit-animation: bounceSecondary 500ms infinite;
+            animation: bounceSecondary 500ms infinite;
+  }
+  
+  @-webkit-keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @-webkit-keyframes bounceSecondary {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes bounceSecondary {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+  }
+  
