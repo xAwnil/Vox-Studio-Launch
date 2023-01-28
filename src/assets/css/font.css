@@ -25,6 +25,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Icons';
+    src: url('../fonts/Icons.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 [class^="icon-"]:before, [class*=" icon-"]:before, [class^="icon-"]:after, [class*=" icon-"]:after, .select-wrap:after {
     font-style: normal;
     font-weight: normal;
@@ -43,5 +50,4 @@
 .icon-restore-down:before { font-family: "Icons"; content: "\e90d"; }
 .icon-account-add:before { font-family: "Icons"; content: "\e901"; }
 .icon-account-delete:before { font-family: "Icons"; content: "\e902"; }
-.icon-settings:before { font-family: "Icons"; content: "\e909"; }
 .icon-monitor:before { font-family: "Icons"; content: "\e90a"; }

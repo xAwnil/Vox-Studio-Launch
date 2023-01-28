@@ -1,0 +1,5 @@
+el boton de jugar, no esta a la misma escala que los otros  '' osea estan bien para que los ubiques porque cada uno esta a medida pero el problema esta en la escala '', entonces, vow, tienes que copiar la escala que pones con cualquier del boton que tu digas, quedo bien, lo copias y lo pegas en cada uno y asi
+
+---------------------------------------------------------------------------------------------------------------------
+
+att : Alza

@@ -12,76 +12,14 @@ const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? `${
 
 class Home {
     static id = "home";
-    async init(config, news) {
+    async init(config) {
         this.config = config
-        this.news = await news
         this.database = await new database().init();
-        this.initNews();
         this.initLaunch();
         this.initStatusServer();
         this.initBtn();
     }
-
-    async initNews() {
-        let news = document.querySelector('.news-list');
-        if (this.news) {
-            if (!this.news.length) {
-                let blockNews = document.createElement('div');
-                blockNews.classList.add('news-block', 'opacity-1');
-                blockNews.innerHTML = `
-                    <div class="news-header">
-                        <div class="header-text">
-                            <div class="title">No hay noticias disponibles actualmente.</div>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="bbWrapper">
-                            <p>Puedes seguir todas las noticias relacionadas con el servidor aquí.</p>
-                        </div>
-                    </div>`
-                news.appendChild(blockNews);
-            } else {
-                for (let News of this.news) {
-                    let date = await this.getdate(News.publish_date)
-                    let blockNews = document.createElement('div');
-                    blockNews.classList.add('news-block');
-                    blockNews.innerHTML = `
-                        <div class="news-header">
-                            <div class="header-text">
-                                <div class="title">${News.title}</div>
-                            </div>
-                            <div class="date">
-                                <div class="day">${date.day}</div>
-                                <div class="month">${date.month}</div>
-                            </div>
-                        </div>
-                        <div class="news-content">
-                            <div class="bbWrapper">
-                                <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Autor,<span> ${News.author}</span></p>
-                            </div>
-                        </div>`
-                    news.appendChild(blockNews);
-                }
-            }
-        } else {
-            let blockNews = document.createElement('div');
-            blockNews.classList.add('news-block', 'opacity-1');
-            blockNews.innerHTML = `
-                <div class="news-header">
-                    <div class="header-text">
-                        <div class="title">Error.</div>
-                    </div>
-                </div>
-                <div class="news-content">
-                    <div class="bbWrapper">
-                        <p>No se puede contactar con el servidor de noticias.</br>Por favor, compruebe su configuración.</p>
-                    </div>
-                </div>`
-            // news.appendChild(blockNews);
-        }
-    }
-
+    
     async initLaunch() {
         document.querySelector('.play-btn').addEventListener('click', async() => {
             let urlpkg = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url;
@@ -190,18 +128,9 @@ class Home {
     }
 
     initBtn() {
-        document.querySelector('.settings-btn').addEventListener('click', () => {
+        document.querySelector('.setings-btn').addEventListener('click', () => {
             changePanel('settings');
         });
-    }
-
-    async getdate(e) {
-        let date = new Date(e)
-        let year = date.getFullYear()
-        let month = date.getMonth() + 1
-        let day = date.getDate()
-        let allMonth = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
-        return { year: year, month: allMonth[month - 1], day: day }
     }
 }
 export default Home;

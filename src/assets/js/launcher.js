@@ -17,7 +17,6 @@ class Launcher {
         console.log("iniciando el launcher...");
         if (process.platform == "win32") this.initFrame();
         this.config = await config.GetConfig().then(res => res);
-        this.news = await config.GetNews().then(res => res);
         this.database = await new database().init();
         this.createPanels(Login, Home, skin, Settings);
         this.getaccounts();
@@ -29,11 +28,11 @@ class Launcher {
                 ipcRenderer.send("main-window-dev-tools");
             }
         })
-        new logger('Launcher', '#7289da')
+        new logger('Vox-Launcher', '#bada55')
     }
 
     initFrame() {
-        console.log("Initializing Frame...")
+        console.log("Iniciando el frame...")
         document.querySelector(".frame").classList.toggle("hide")
         document.querySelector(".dragbar").classList.toggle("hide")
 
@@ -48,12 +47,12 @@ class Launcher {
     createPanels(...panels) {
         let panelsElem = document.querySelector(".panels")
         for (let panel of panels) {
-            console.log(`Initializing ${panel.name} Panel...`);
+            console.log(`Iniciando el ${panel.name} Panel...`);
             let div = document.createElement("div");
             div.classList.add("panel", panel.id)
             div.innerHTML = fs.readFileSync(`${__dirname}/panels/${panel.id}.html`, "utf8");
             panelsElem.appendChild(div);
-            new panel().init(this.config, this.news);
+            new panel().init(this.config);
         }
     }
 
@@ -67,7 +66,7 @@ class Launcher {
             for (let account of accounts) {
                 account = account.value;
                 if (account.meta.type === 'Xbox') {
-                    console.log(`Initializing Xbox account ${account.name}...`);
+                    console.log(`Iniciando Xbox cuenta ${account.name}...`);
                     let refresh = await new Microsoft(this.config.client_id).refresh(account);
                     let refresh_accounts;
                     let refresh_profile;
