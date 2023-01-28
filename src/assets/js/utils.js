@@ -40,9 +40,9 @@ function accountSelect(uuid) {
 
     if (activeAccount) activeAccount.classList.toggle('active-account');
     account.classList.add('active-account');
-    headplayer(pseudo);
+    //headplayer(pseudo);
 }
 
-function headplayer(pseudo) {
-    document.querySelector(".player-head").style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
-}
+//function headplayer(pseudo) {
+    //document.querySelector(".player-head").style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
+//}
