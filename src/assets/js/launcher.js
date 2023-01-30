@@ -18,7 +18,7 @@ class Launcher {
         if (process.platform == "win32") this.initFrame();
         this.config = await config.GetConfig().then(res => res);
         this.database = await new database().init();
-        this.createPanels(Login, Home, skin, Settings);
+        this.createPanels(Login, Home, skin, Settings );
         this.getaccounts();
     }
 
@@ -66,7 +66,7 @@ class Launcher {
             for (let account of accounts) {
                 account = account.value;
                 if (account.meta.type === 'Xbox') {
-                    console.log(`Iniciando Xbox cuenta ${account.name}...`);
+                    console.log(`Initializing Xbox account ${account.name}...`);
                     let refresh = await new Microsoft(this.config.client_id).refresh(account);
                     let refresh_accounts;
                     let refresh_profile;
@@ -150,6 +150,11 @@ class Launcher {
                     if (account.uuid === selectaccount) this.database.update({ uuid: "1234" }, 'accounts-selected')
                 }
             }
+
+
+
+
+            
             if (!(await this.database.get('1234', 'accounts-selected')).value.selected) {
                 let uuid = (await this.database.getAll('accounts'))[0]?.value?.uuid
                 if (uuid) {

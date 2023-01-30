@@ -40,7 +40,7 @@ function accountSelect(uuid) {
 
     if (activeAccount) activeAccount.classList.toggle('active-account');
     account.classList.add('active-account');
-    //headplayer(pseudo);
+    //headplayer(pseudo)
 }
 
 //function headplayer(pseudo) {

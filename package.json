@@ -5,7 +5,7 @@
     "description": "Launcher Mincraft custom (crack, premium)",
     "main": "src/app.js",
     "author": "Vowxky",
-    "url": "http://craftdium.ml/launcherSelvania/",
+    "url": "https://voxlauncher.tk/voxlauncher.tk/",
     "engines": {
         "node": "^16.x.x"
     },
@@ -14,7 +14,7 @@
         "build": "node build.js",
         "dev": "nodemon --exec npm start"
     },
-    "license": "CC0",
+    "license": "MIT",
     "nodemonConfig": {
         "ext": "js,html,css"
     },

@@ -16,7 +16,6 @@ class Home {
         this.config = config
         this.database = await new database().init();
         this.initLaunch();
-        this.initStatusServer();
         this.initBtn();
     }
     
@@ -108,29 +107,11 @@ class Home {
             })
         })
     }
-    
-    async initStatusServer() {
-        let nameServer = document.querySelector('.server-text .name');
-        let serverMs = document.querySelector('.server-text .desc');
-        let playersConnected = document.querySelector('.etat-text .text');
-        let online = document.querySelector(".etat-text .online");
-        let serverPing = await new Status(this.config.status.ip, this.config.status.port).getStatus();
-
-        if (!serverPing.error) {
-            nameServer.textContent = this.config.status.nameServer;
-            serverMs.innerHTML = `<span class="green">En linea</span> - ${serverPing.ms}ms`;
-            online.classList.toggle("off");
-            playersConnected.textContent = serverPing.playersConnect;
-        } else if (serverPing.error) {
-            nameServer.textContent = 'Servidor no disponible';
-            serverMs.innerHTML = `<span class="red">Fuera de linea</span>`;
-        }
-    }
-
     initBtn() {
         document.querySelector('.setings-btn').addEventListener('click', () => {
             changePanel('settings');
         });
     }
+    
 }
 export default Home;

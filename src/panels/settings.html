@@ -1,30 +1,8 @@
-<div class="settings-content">
-    <div class="tabs-settings-btn">
-        <button class="tab-btn-css tab-btn active-tab-btn default-tab-btn">Cuentas</button>
-        <button class="tab-btn-css tab-btn">Ram</button>
-        <button class="tab-btn-css tab-btn">Resolucion</button>
-        <button class="tab-btn-css tab-btn">Launcher</button>
-        <button class="tab-btn-css save-tabs-btn">Menu</button>
-    </div>
-
     <div class="tabs-settings-content active-tab-content">
-        <div class="center-align">
-            <button class="add-account">Agregar una cuenta</button>
-            <div class="accounts"></div>
-        </div>
-    </div>
-
-    <div class="tabs-settings-content">
         <div class="settings-content-scroll">
-            <div class="title-settings">Parametro de tu RAM.</div>
             <div class="java-settings">
                 <div class="information">
-                    Definición de la memoria RAM asignada a tu juego, una mayor cantidad aumentará el rendimiento de tu juego.
-                    otras aplicaciones.
-                    <br><br>
-                    <b>- RAM máxima:</b> Indica la cantidad total de RAM asignada a tu juego. Se recomienda que no excedas el 50% de la cantidad total de RAM presente en tu PC para que funcione correctamente. Si tu computadora
-                    tiene más de 8GB de RAM, recomendamos asignarle 3GB. Si su computadora tiene 4 GB o menos, no asigne más de 2 GB.<br><br>
-                    <b>- RAM mínima:</b> Indica la cantidad mínima de RAM asignada al iniciar tu juego, se recomienda no poner más de 3GB para este valor. El valor típico es de 1 GB.
+                    Ram recomendada es de 4gb
                 </div>
                 <div class="ram-info">
                     <div class="memory-slider" min="0.5" max="8" step="0.5">
@@ -38,75 +16,13 @@
                             <span></span>
                         </div>
                     </div>
-
-                    <div class="ram-info-block">
-                        <b>Tienes un total de <span id="total-ram">0 Gb</span> RAM.</b><br>
-                        <b>Tienes un total de <span id="free-ram">0 Gb</span> RAM disponible.</b>
-                    </div>
+                    <div class="java-little"></div>
                 </div>
+                <div class="settings-content">
+                    <button class="tab-btn-css save-tabs-btn default-tab-btn">Cancelar</button>
+                </div>
+
             </div>
             </div>
         </div>
     </div>
-
-    <div class="tabs-settings-content">
-        <div class="center-page">
-            <div class="title-settings">Configuración de resolución de Minecraft.</div>
-            <div class="java-settings">
-                <div class="information">
-                    Establezca una resolución personalizada o elija una de la lista según el tamaño de su pantalla.
-                </div>
-                <div class="input-size-content">
-                    <div class="input-size">
-                        <input type="text" class="width-size input-settings" disabled>
-                        <div class="size-cross"></div>
-                        <input type="text" class="height-size input-settings" disabled>
-                        <div class="select-wrap icon-monitor">
-                            <select id="select" class="select">
-                                <option disabled selected value style="display: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <optgroup label="Ratio 4:3">
-                                    <option value="640 x 480">640 x 480</option>
-                                    <option value="800 x 600">800 x 600</option>
-                                    <option value="1024 x 768">1024 x 768</option>
-                                    <option value="1280 x 960">1280 x 960</option>
-                                    <option value="1280 x 1024">1280 x 1024</option>
-                                </optgroup>
-                                <optgroup label="Ratio 16:9">
-                                    <option value="854 x 480">854 x 480</option>
-                                    <option value="1280 x 720">1280 x 720</option>
-                                    <option value="1360 x 768">1360 x 768</option>
-                                    <option value="1600 x 900">1600 x 900</option>
-                                    <option value="1920 x 1080">1920 x 1080</option>
-                                </optgroup>
-                                <optgroup label="Ratio 16:10">
-                                    <option value="1280 x 768">1280 x 768</option>
-                                    <option value="1280 x 800">1280 x 800</option>
-                                    <option value="1440 x 900">1440 x 900</option>
-                                    <option value="1600 x 1024">1600 x 1024</option>
-                                    <option value="1680 x 1050">1680 x 1050</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="tabs-settings-content">
-        <div class="center-page">
-            <div class="title-settings">Configuración del launcher.</div>
-            <div class="java-settings">
-                <div class="information"></div>
-            </div>
-
-            <div class="title-settings">Configuración después de iniciar el juego.</div>
-            <div class="java-settings">
-                <div class="information"></div>            
-                <input type="checkbox" class="checkbox-settings" id="launcher-close"><label for="launcher-close"><div class="checkround"></div></label> <div class="launcher-close">Cierra el launcher después de iniciar Minecraft<br></div>
-                <div class="launcher-btn-close-all"><input type="checkbox" class="checkbox-settings" id="launcher-close-all"><label for="launcher-close-all"><div class="checkround"></div></label> <div class="launcher-close-all">Cierra Minecraft si el launcher está cerrado<br></div></div>
-                <div class="launcher-btn-open"><input type="checkbox" class="checkbox-settings" id="launcher-open"><label for="launcher-open"><div class="checkround"></div></label> <div class="launcher-open">Mantiene el launcher abierto después de iniciar Minecraft.</div></div>
-            </div>
-        </div>
-    </div>
-</div>
