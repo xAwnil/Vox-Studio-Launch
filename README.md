@@ -26,8 +26,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://raw.githubusercontent.com/vowxky/Vox-Studio-Launch/main/readme-images/background-launcher.PNG">
-    <img src="readme-images/voxlogo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Vox Launch</h3>
@@ -70,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca del launcher
 
-[![Product Name Screen Shot](https://raw.githubusercontent.com/vowxky/Vox-Studio-Launch/main/readme-images/background-launcher.PNG)
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 El launcher esta creado en electron.js basado en codigo de html , css y javascript
 
@@ -101,3 +101,19 @@ Distribuida con la licencia de MIT. Puedes verlo aqui `LICENSE.txt` para mas inf
  - [Server WEB](https://VoxStudios.vowxky.repl.co) - voxstudios.com@gmail.com
 
 Link del proyecto: [https://github.com/vowxky/Vox-Studio-Launch.git](https://github.com/vowxky/Vox-Studio-Launch.git)
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
+* [React Icons](https://react-icons.github.io/react-icons/search)
