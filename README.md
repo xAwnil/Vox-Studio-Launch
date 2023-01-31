@@ -28,8 +28,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://raw.githubusercontent.com/vowxky/Vox-Studio-Launch/main/readme-images/background-launcher.PNG">
+    <img src="readme-images/voxlogo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Vox Launch</h3>
