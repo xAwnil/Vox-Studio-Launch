@@ -70,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca del launcher
 
-[![Product Name Screen Shot][https://raw.githubusercontent.com/vowxky/Vox-Studio-Launch/main/readme-images/background-launcher.PNG]](https://raw.githubusercontent.com/vowxky/Vox-Studio-Launch/main/readme-images/background-launcher.PNG)
+[![Product Name Screen Shot](https://raw.githubusercontent.com/vowxky/Vox-Studio-Launch/main/readme-images/background-launcher.PNG)
 
 El launcher esta creado en electron.js basado en codigo de html , css y javascript
 
