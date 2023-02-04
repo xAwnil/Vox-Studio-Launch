@@ -7,7 +7,7 @@
     "author": "Vowxky",
     "url": "https://voxlauncher.tk/voxlauncher.tk/",
     "engines": {
-        "node": "^16.x.x"
+        "node": "^18.x.x"
     },
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
