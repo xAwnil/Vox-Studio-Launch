@@ -12,6 +12,10 @@ builder.build({
         directories: { "output": "dist" },
         compression: 'maximum',
         asar: true,
+        publish: [{
+            provider: "github",
+            releaseType: 'release',
+        }],
         win: {
             icon: "./src/assets/images/icon.ico",
             target: [{
@@ -45,7 +49,7 @@ builder.build({
         }
     }
 }).then(() => {
-    console.log('La build fue terminada con excito :3')
+    console.log('le build est terminé')
 }).catch(err => {
-    console.error('Error en la build revise su codigo :c', err)
+    console.error('Error during build!', err)
 })
