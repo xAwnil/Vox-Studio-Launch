@@ -17,8 +17,11 @@ class Home {
         this.database = await new database().init();
         this.initLaunch();
         this.initBtn();
+        this.Profileocutlar();
+        this.iniciodecuenta();
     }
     
+
     async initLaunch() {
         document.querySelector('.play-btn').addEventListener('click', async() => {
             let urlpkg = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url;
@@ -113,5 +116,70 @@ class Home {
         });
     }
     
+
+    iniciodecuenta() {
+        document.querySelector('.accounts').addEventListener('click', async(e) => {
+            let uuid = e.target.id;
+            let selectedaccount = await this.database.get('1234', 'accounts-selected');
+
+            if (e.path[0].classList.contains('account')) {
+                accountSelect(uuid);
+                this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
+            }
+
+            if (e.target.classList.contains("acount-delete")) {
+                this.database.delete(e.path[1].id, 'accounts');
+
+                document.querySelector('.accounts').removeChild(e.path[1])
+                if (!document.querySelector('.accounts').children.length) {
+                    changePanel("login");
+                    return
+                }
+
+                if (e.path[1].id === selectedaccount.value.selected) {
+                    let uuid = (await this.database.getAll('accounts'))[0].value.uuid
+                    this.database.update({
+                        uuid: "1234",
+                        selected: uuid
+                    }, 'accounts-selected')
+                    accountSelect(uuid)
+                }
+            }
+        })
+    }
+
+
+    async Profileocutlar() {
+        let profilebtn = document.querySelector('.profile-btn');
+        let cardprofile = document.querySelector(".cardprofile")
+        let accountdelete = document.querySelector(".acount-delete")
+        let cardprofiledragbar = document.querySelector(".cardprofile-dragbar")
+        let cardprofileprofilepho = document.querySelector(".cardprofile-profilepho")
+        let cardprofilex = document.querySelector('.cardprofile-x')
+
+        document.querySelector('.profile-btn').addEventListener('click', () => {
+            accountdelete.style.display='block'
+            cardprofile.style.opacity= '1'
+            cardprofiledragbar.style.opacity='1'
+            cardprofileprofilepho.style.opacity='1'
+            accountdelete.style.opacity='1'
+            cardprofilex.style.display='block'
+            cardprofilex.style.opacity='1'
+
+        });
+
+        document.querySelector('.cardprofile-x').addEventListener('click', () =>{
+            accountdelete.style.display='none'
+            cardprofile.style.opacity= '0'
+            cardprofiledragbar.style.opacity='0'
+            cardprofileprofilepho.style.opacity='0'
+            accountdelete.style.opacity='0'
+            cardprofilex.style.display='none'
+            cardprofilex.style.opacity='0'
+        })
+    }
+    
+    
 }
+
 export default Home;

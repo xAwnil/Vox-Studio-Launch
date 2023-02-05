@@ -18,7 +18,7 @@ class Launcher {
         if (process.platform == "win32") this.initFrame();
         this.config = await config.GetConfig().then(res => res);
         this.database = await new database().init();
-        this.createPanels(Login, Home, skin, Settings );
+        this.createPanels(Login, Home, skin, Settings);
         this.getaccounts();
     }
 
