@@ -1,3 +1,7 @@
+.show {
+    opacity: 1;
+  }  
+
 .bottom-bar-home {
     position: fixed;
     bottom: 0;
@@ -7,19 +11,6 @@
     border-top-right-radius: 40px;
     background: transparent;
     display: flex;
-}
-
-.player-head {
-    margin: auto 30px;
-    background-image: url("../../images/default/setve.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 15px;
 }
 
 .profile-btn{
@@ -37,8 +28,13 @@
     font-size: 16px;
     display: block;
     cursor: pointer;
-    top: -130%;
-    left: 27.16%;
+    top: -131%;
+    left: 25.70%;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
 }
 
 .profile-btn:hover{
@@ -49,6 +45,214 @@
     transform: translateY(-3px);
     transition: all .5s ease-in-out 0s;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+
+.cardprofile{
+    color: var(--color);
+    position: absolute;
+    outline: none;
+    background-repeat: no-repeat;
+    background-color: #1e1f29;
+    width: 150px;
+    height: 160px;
+    border: none;
+    font-size: 16px;
+    display: block;
+    top: -400%;
+    left: 24.50%;
+    border-radius: 20px;
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.20s ease-in-out;
+    -moz-transition: opacity 0.20s ease-in-out;
+    -ms-transition: opacity 0.20s ease-in-out;
+    -o-transition: opacity 0.20s ease-in-out;
+    transition: opacity 0.20 ease-in-out;
+}
+
+.cardprofile.fade {
+    opacity:1;
+  }
+
+
+.acount-delete {
+    border-radius: 10px;
+    text-align: center;
+    margin-top: -270px;
+    margin-left: -434px;
+    text-align: center ;
+    color: var(--color);
+    transition: 0.50s;
+    width: 125px;
+    height: 30px;
+    background: #942723;
+    border: 4px solid #942723;
+    font: normal normal bold 14px Poppins;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px #942723;
+    outline: none;
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.30s ease-in-out;
+    -moz-transition: opacity 0.30s ease-in-out;
+    -ms-transition: opacity 0.30s ease-in-out;
+    -o-transition: opacity 0.30s ease-in-out;
+    transition:  0.40s ease-in-out;
+}
+
+.account-delete:hover,
+.account-delete:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  color: #942723;
+  background-color: white;
+  border-radius: 0px;
+}
+
+.cardprofile-dragbar{
+    color: var(--color);
+    position: absolute;
+    outline: none;
+    background-repeat: no-repeat;
+    background-color: #14151e;
+    width: 150px;
+    height: 50px;
+    border: none;
+    font-size: 16px;
+    display: block;
+    top: -400%;
+    left: 24.50%;
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25 ease-in-out;
+}
+
+.cardprofile-dragbar.fade {
+    opacity:1;
+  }
+
+
+.cardprofile-profilepho {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --border-width: 3px;
+    margin: -200px 345px;
+    background-image: url("../../images/default/setve.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0;
+    border-radius: var(--border-width);
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.cardprofile-profilepho::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+        -webkit-transition: opacity 0.30s ease-in-out;
+    -moz-transition: opacity 0.30s ease-in-out;
+    -ms-transition: opacity 0.30s ease-in-out;
+    -o-transition: opacity 0.30s ease-in-out;
+    transition: opacity 0.30 ease-in-out;
+  }
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+.cardprofile-profilepho.fade {
+    opacity:1;
+  }
+
+.cardprofile-x{
+    color: var(--color);
+    position: absolute;
+    outline: none;
+    background-repeat: no-repeat;
+    background-color: #14151e;
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    display: block;
+    top: -420%;
+    left: 35.50%;
+    border-radius: 20px;
+    -webkit-transition: opacity 0.20s ease-in-out;
+    -moz-transition: opacity 0.20s ease-in-out;
+    -ms-transition: opacity 0.20s ease-in-out;
+    -o-transition: opacity 0.20s ease-in-out;
+    transition:  0.40s ease-in-out;
+    cursor: pointer;
+    background-image: url(./images/buttons/close.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    display: none;
+    opacity: 0;
+}
+
+.cardprofile-x:hover,
+.cardprofile-x:focus {
+  background-color: rgb(141, 17, 17);
+}
+
+
+.cardprofile-x.fade {
+    opacity:1;
+  }
 
 
 
@@ -67,8 +271,13 @@
     font-size: 16px;
     display: block;
     cursor: pointer;
-    top: -130%;
-    left: 68.80%;
+    top: -131%;
+    left: 67.20%;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
 }
 
 .setings-btn:hover{
@@ -80,6 +289,31 @@
     transition: all .5s ease-in-out 0s;
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 
 .play-element {
     position: absolute;
@@ -88,7 +322,7 @@
     color: #F1F1F1;
     font: normal normal bold 4px/29px Poppins;
     text-align: center;
-    left: 35.50%;
+    left: 33.90%;
     top: -6%;
 }
 
@@ -107,7 +341,12 @@
     font-size: 16px;
     display: block;
     cursor: pointer;
-    top: -129%;
+    top: -130%;
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
   }
 
 .play-btn:hover{
@@ -118,6 +357,33 @@
     transform: translateY(-3px);
     transition: all .5s ease-in-out 0s;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
 
 .download-content {
     position: center;
@@ -147,9 +413,9 @@
 
 h4{
     position: absolute;
-    top: -5px;
+    top: -8.50px;
     width: 110px;
-    left: 560px;
+    left: 548px;
     font-family: verdana;
     text-align: center;
     font-size: 11px;

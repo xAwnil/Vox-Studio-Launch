@@ -10,7 +10,7 @@ export {
     changePanel as changePanel,
     addAccount as addAccount,
     slider as Slider,
-    accountSelect as accountSelect
+    accountSelect as accountSelect,
 }
 
 function changePanel(id) {
@@ -40,9 +40,9 @@ function accountSelect(uuid) {
 
     if (activeAccount) activeAccount.classList.toggle('active-account');
     account.classList.add('active-account');
-    //headplayer(pseudo)
+    headplayer(pseudo)
 }
 
-//function headplayer(pseudo) {
-    //document.querySelector(".player-head").style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
-//}
+function headplayer(pseudo) {
+    document.querySelector(".cardprofile-profilepho").style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
+}
