@@ -18,7 +18,6 @@ class Home {
         this.initLaunch();
         this.initBtn();
         this.Profileocutlar();
-        this.iniciodecuenta();
     }
     
 
@@ -37,7 +36,33 @@ class Home {
             let playBtn = document.querySelector('.play-btn');
             let info = document.querySelector(".text-download")
             let progressBar = document.querySelector(".progress-bar")
+            let accountdelete = document.querySelector(".accounts-delete")
 
+            document.querySelector('.accounts-delete').addEventListener('click', async () => {
+                if (e.path[0].classList.contains('account')) {
+                    accountSelect(uuid);
+                    this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
+                }
+    
+                if (e.target.classList.contains("account-delete")) {
+                    this.database.delete(e.path[1].id, 'accounts');
+    
+                    document.querySelector('.accounts').removeChild(e.path[1])
+                    if (!document.querySelector('.accounts').children.length) {
+                        changePanel("login");
+                        return
+                    }
+    
+                    if (e.path[1].id === selectedaccount.value.selected) {
+                        let uuid = (await this.database.getAll('accounts'))[0].value.uuid
+                        this.database.update({
+                            uuid: "1234",
+                            selected: uuid
+                        }, 'accounts-selected')
+                        accountSelect(uuid)
+                    }
+                }
+            })
             if (Resolution.screen.width == '<auto>') {
                 screen = false
             } else {
@@ -114,38 +139,6 @@ class Home {
         document.querySelector('.setings-btn').addEventListener('click', () => {
             changePanel('settings');
         });
-    }
-    
-
-    iniciodecuenta() {
-        document.querySelector('.accounts').addEventListener('click', async(e) => {
-            let uuid = e.target.id;
-            let selectedaccount = await this.database.get('1234', 'accounts-selected');
-
-            if (e.path[0].classList.contains('account')) {
-                accountSelect(uuid);
-                this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
-            }
-
-            if (e.target.classList.contains("acount-delete")) {
-                this.database.delete(e.path[1].id, 'accounts');
-
-                document.querySelector('.accounts').removeChild(e.path[1])
-                if (!document.querySelector('.accounts').children.length) {
-                    changePanel("login");
-                    return
-                }
-
-                if (e.path[1].id === selectedaccount.value.selected) {
-                    let uuid = (await this.database.getAll('accounts'))[0].value.uuid
-                    this.database.update({
-                        uuid: "1234",
-                        selected: uuid
-                    }, 'accounts-selected')
-                    accountSelect(uuid)
-                }
-            }
-        })
     }
 
 
