@@ -207,7 +207,7 @@ class Login {
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Ingrese su dirección de correo electrónico / nombre de usuario"
+                infoLogin.innerHTML = "Ingrese su nombre de usuario"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -216,7 +216,7 @@ class Login {
             }
 
             if (mailInput.value.length < 3) {
-                infoLogin.innerHTML = "Su nombre de usuario debe tener al menos 3 caracteres"
+                infoLogin.innerHTML = "Su nombre de MC debe tener menos de 3 caracteres"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -272,6 +272,16 @@ class Login {
         patreon.addEventListener("click", () => {
             window.open("https://patreon.com/VoxStudios551", '_blank');
         })
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var checkBox = document.getElementById("myCheck");
+            var buttonss = document.getElementById(".login-btn");
+            if (checkBox.checked == true){
+                var buttonss = document.getElementById("login-btn").disabled = true;
+            } else {
+               var buttonss = document.getElementById(".login-btn").disabled = false;
+            }
+          });
     }
 }
 
