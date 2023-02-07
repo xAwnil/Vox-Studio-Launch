@@ -11,6 +11,7 @@ class Login {
         this.database = await new database().init();
         if (this.config.online) this.getOnline()
         else this.getOffline()
+        this.botoneslinks()
     }
 
     getOnline() {
@@ -185,7 +186,7 @@ class Login {
         let loginBtn = document.querySelector(".login-btn")
         let mojangBtn = document.querySelector('.mojang')
 
-        mojangBtn.innerHTML = "Offline"
+        mojangBtn.innerHTML = "Login Crack"
 
         mojangBtn.addEventListener("click", () => {
             document.querySelector(".login-card").style.display = "none";
@@ -259,6 +260,17 @@ class Login {
                 passwordInput.disabled = false;
                 infoLogin.innerHTML = 'Dirección de correo electrónico o contraseña no válidos'
             })
+        })
+    }
+    botoneslinks(){
+        const discord = document.querySelector(".discord")
+        discord.addEventListener("click", () => {
+            window.open("https://discord.io/VoxStudios", '_blank');
+        })
+
+        const patreon = document.querySelector(".patreon")
+        patreon.addEventListener("click", () => {
+            window.open("https://patreon.com/VoxStudios551", '_blank');
         })
     }
 }

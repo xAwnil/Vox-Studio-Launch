@@ -44,7 +44,7 @@ class Home {
                     this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
                 }
     
-                if (e.target.classList.contains("account-delete")) {
+                if (e.target.classList.contains("accountdelete")) {
                     this.database.delete(e.path[1].id, 'accounts');
     
                     document.querySelector('.accounts').removeChild(e.path[1])
