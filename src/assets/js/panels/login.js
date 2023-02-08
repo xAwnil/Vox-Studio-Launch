@@ -273,15 +273,14 @@ class Login {
             window.open("https://patreon.com/VoxStudios551", '_blank');
         })
 
-        document.addEventListener("DOMContentLoaded", function(event) {
-            var checkBox = document.getElementById("myCheck");
-            var buttonss = document.getElementById(".login-btn");
-            if (checkBox.checked == true){
-                var buttonss = document.getElementById("login-btn").disabled = true;
-            } else {
-               var buttonss = document.getElementById(".login-btn").disabled = false;
-            }
-          });
+
+        let example1 = document.querySelector('.example1')
+
+        if(example1.checked){
+            document.getElementById("submit_button").disabled = false;
+        } else{
+            document.getElementById("submit_button").disabled = true;
+        }
     }
 }
 
