@@ -1,6 +1,7 @@
 'use strict';
 
-import { logger, database, changePanel } from '../utils.js';
+import { logger, database, changePanel, accountSelect, Slider } from '../utils.js';
+
 
 const { Launch, Status } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
@@ -17,7 +18,6 @@ class Home {
         this.database = await new database().init();
         this.initLaunch();
         this.initBtn();
-        this.Profileocutlar();
     }
     
 
@@ -36,33 +36,7 @@ class Home {
             let playBtn = document.querySelector('.play-btn');
             let info = document.querySelector(".text-download")
             let progressBar = document.querySelector(".progress-bar")
-            let accountdelete = document.querySelector(".accounts-delete")
 
-            document.querySelector('.accounts-delete').addEventListener('click', async () => {
-                if (e.path[0].classList.contains('account')) {
-                    accountSelect(uuid);
-                    this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
-                }
-    
-                if (e.target.classList.contains("accountdelete")) {
-                    this.database.delete(e.path[1].id, 'accounts');
-    
-                    document.querySelector('.accounts').removeChild(e.path[1])
-                    if (!document.querySelector('.accounts').children.length) {
-                        changePanel("login");
-                        return
-                    }
-    
-                    if (e.path[1].id === selectedaccount.value.selected) {
-                        let uuid = (await this.database.getAll('accounts'))[0].value.uuid
-                        this.database.update({
-                            uuid: "1234",
-                            selected: uuid
-                        }, 'accounts-selected')
-                        accountSelect(uuid)
-                    }
-                }
-            })
             if (Resolution.screen.width == '<auto>') {
                 screen = false
             } else {
@@ -136,13 +110,8 @@ class Home {
         })
     }
     initBtn() {
-        document.querySelector('.setings-btn').addEventListener('click', () => {
-            changePanel('settings');
-        });
-    }
 
-
-    async Profileocutlar() {
+        // for hide and show profile
         let profilebtn = document.querySelector('.profile-btn');
         let cardprofile = document.querySelector(".cardprofile")
         let accountdelete = document.querySelector(".acount-delete")
@@ -170,7 +139,36 @@ class Home {
             cardprofilex.style.display='none'
             cardprofilex.style.opacity='0'
         })
+
+        // for logout
+        document.querySelector('.acount-delete').addEventListener('click', async (e) => {
+            let uuid = e.target.id;
+            if (e.path[0].classList.contains('account')) {
+                accountSelect(uuid);
+                this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
+            }
+
+            if (e.target.classList.contains("accountdelete")) {
+                this.database.delete(e.path[1].id, 'accounts');
+                changePanel("login");
+                
+                if (e.path[1].id === selectedaccount.value.selected) {
+                    let uuid = (await this.database.getAll('accounts'))[0].value.uuid
+                    this.database.update({
+                        uuid: "1234",
+                        selected: uuid
+                    }, 'accounts-selected')
+                    accountSelect(uuid)
+                }
+            }
+        })
+
+        // settings
+        document.querySelector('.setings-btn').addEventListener('click', () => {
+            changePanel('settings');
+        });
     }
+
     
     
 }
