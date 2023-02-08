@@ -274,13 +274,18 @@ class Login {
         })
 
 
-        let example1 = document.querySelector('.example1')
-
-        if(example1.checked){
-            document.getElementById("submit_button").disabled = false;
-        } else{
-            document.getElementById("submit_button").disabled = true;
-        }
+        //Acept terms and conditions
+        var checker = document.getElementById('checkme');
+        var sendbtn = document.getElementById('login-btn');
+        // when unchecked or checked, run the function
+        checker.onchange = function(){
+       if(this.checked){
+           sendbtn.disabled = false;
+       } else {
+           sendbtn.disabled = true;
+       }
+       
+       }
     }
 }
 

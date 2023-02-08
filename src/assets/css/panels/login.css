@@ -305,6 +305,11 @@ img {
     color: #ffffff;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
+    -webkit-transition: opacity 0.30s ease-in-out;
+    -moz-transition: opacity 0.30s ease-in-out;
+    -ms-transition: opacity 0.30s ease-in-out;
+    -o-transition: opacity 0.30s ease-in-out;
+    transition:  0.40s ease-in-out;
 }
 
 .login-btn:hover {
@@ -313,6 +318,11 @@ img {
 
 .login-btn:disabled{
     background-color: #000000;
+}
+
+
+.labelito{
+    font-size: 10px;
 }
 
 .cancel {
