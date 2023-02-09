@@ -127,8 +127,8 @@
     transition:  0.40s ease-in-out;
 }
 
-.account-delete:hover,
-.account-delete:focus {
+.acount-delete:hover,
+.acount-delete:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   color: #942723;
   background-color: white;
@@ -434,3 +434,4 @@ h4{
     color: white;
     background-color: azure;
   }
+

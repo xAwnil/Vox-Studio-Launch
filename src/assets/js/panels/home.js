@@ -143,6 +143,7 @@ class Home {
         // for logout
         document.querySelector('.acount-delete').addEventListener('click', async (e) => {
             let uuid = e.target.id;
+            let selectedaccount = await this.database.get('1234', 'accounts-selected');
             if (e.path[0].classList.contains('account')) {
                 accountSelect(uuid);
                 this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected');
@@ -161,6 +162,14 @@ class Home {
                     accountSelect(uuid)
                 }
             }
+
+            accountdelete.style.display='none'
+            cardprofile.style.opacity= '0'
+            cardprofiledragbar.style.opacity='0'
+            cardprofileprofilepho.style.opacity='0'
+            accountdelete.style.opacity='0'
+            cardprofilex.style.display='none'
+            cardprofilex.style.opacity='0'
         })
 
         // settings

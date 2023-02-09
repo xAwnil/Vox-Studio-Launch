@@ -100,7 +100,6 @@ class Login {
         let mailInput = document.querySelector('.Mail')
         let passwordInput = document.querySelector('.Password')
         let cancelMojangBtn = document.querySelector('.cancel-mojang')
-        let infoLogin = document.querySelector('.info-login')
         let loginBtn = document.querySelector(".login-btn")
         let mojangBtn = document.querySelector('.mojang')
 
@@ -119,11 +118,9 @@ class Login {
             loginBtn.disabled = true;
             mailInput.disabled = true;
             passwordInput.disabled = true;
-            infoLogin.innerHTML = "Conectando...";
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Ingrese su dirección de correo electrónico / nombre de usuario"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -132,7 +129,6 @@ class Login {
             }
 
             if (passwordInput.value == "") {
-                infoLogin.innerHTML = "Ingresa tu contraseña"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -167,13 +163,11 @@ class Login {
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
                 loginBtn.style.display = "block";
-                infoLogin.innerHTML = "&nbsp;";
             }).catch(err => {
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Dirección de correo electrónico o contraseña no válidos'
             })
         })
     }
@@ -182,7 +176,6 @@ class Login {
         let mailInput = document.querySelector('.Mail')
         let passwordInput = document.querySelector('.Password')
         let cancelMojangBtn = document.querySelector('.cancel-mojang')
-        let infoLogin = document.querySelector('.info-login')
         let loginBtn = document.querySelector(".login-btn")
         let mojangBtn = document.querySelector('.mojang')
 
@@ -198,27 +191,29 @@ class Login {
             document.querySelector(".login-card-mojang").style.display = "none";
         })
 
+        var sendbtn = document.getElementById('login-btn');
+
         loginBtn.addEventListener("click", () => {
             cancelMojangBtn.disabled = true;
             loginBtn.disabled = true;
             mailInput.disabled = true;
             passwordInput.disabled = false;
-            infoLogin.innerHTML = "Conectando...";
+            document.getElementById("checkme").checked = false;
+            document.getElementById("login-btn").disabled = true;
+            sendbtn.innerText = "Acepta los terminos";
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Ingrese su nombre de usuario"
                 cancelMojangBtn.disabled = false;
-                loginBtn.disabled = false;
+                loginBtn.disabled = true;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
                 return
             }
 
             if (mailInput.value.length < 3) {
-                infoLogin.innerHTML = "Su nombre de MC debe tener menos de 3 caracteres"
                 cancelMojangBtn.disabled = false;
-                loginBtn.disabled = false;
+                loginBtn.disabled = true;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
                 return
@@ -247,22 +242,23 @@ class Login {
                 cancelMojangBtn.disabled = false;
                 cancelMojangBtn.click();
                 mailInput.value = "";
-                loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
                 loginBtn.style.display = "block";
-                infoLogin.innerHTML = "&nbsp;";
             }).catch(err => {
                 console.log(err)
                 cancelMojangBtn.disabled = false;
-                loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Dirección de correo electrónico o contraseña no válidos'
             })
         })
     }
     botoneslinks(){
+        //funcion sleep
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
+        //botones linkeados
         const discord = document.querySelector(".discord")
         discord.addEventListener("click", () => {
             window.open("https://discord.io/VoxStudios", '_blank');
@@ -277,14 +273,23 @@ class Login {
         //Acept terms and conditions
         var checker = document.getElementById('checkme');
         var sendbtn = document.getElementById('login-btn');
-        // when unchecked or checked, run the function
         checker.onchange = function(){
        if(this.checked){
            sendbtn.disabled = false;
+           sendbtn.style.opacity= '0'
+           sleep(100)
+           sendbtn.style.opacity= '1'
+           sendbtn.innerText = "Acceder";
        } else {
            sendbtn.disabled = true;
+           sendbtn.style.opacity= '0'
+           sleep(7)
+           sendbtn.style.opacity= '1'
+           sendbtn.innerText = "Acepta los terminos";
        }
        
+       
+
        }
     }
 }

@@ -1,7 +1,7 @@
 {
     "name": "Vox-Launch",
     "preductname": "Vox Launch",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Launcher Mincraft custom (crack, premium)",
     "main": "src/app.js",
     "author": "Vowxky",
