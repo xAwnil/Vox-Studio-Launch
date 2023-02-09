@@ -385,30 +385,72 @@
 
 
 
+.downloadbutton{
+  color: var(--color);
+  transition: 0.25s;
+  position: absolute;
+  outline: none;
+  background-image: url(./images/buttons/btnsinnada.png);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-color: transparent;
+  width: 400px;
+  height: 90.90px;
+  left: 0px;
+  border: none;
+  font-size: 16px;
+  display: none;
+  cursor: pointer;
+  top: -130%;
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+
 .download-content {
-    position: center;
-    top: -64%;
-    left: 1000%;
+    position: absolute;
+    top: -60%;
+    left: 200px;
     transform: translate(-50%, -50%);
+    background-color: transparent;
+    z-index: -2;
 }
 
 .text-download,
 .progress-bar {
     visibility: hidden;
     display: none;
+    background-color: transparent;
+    z-index: -2;
 }
 
 .text-download {
+    opacity: 0;
+    display: none;
     visibility: visible;
-    font-size: 20px;
-    left: 1000%;
+    font-size: 30px;
+    background-color: transparent;
+    z-index: -2;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e0d5db, 0 0 40px #dbd8da, 0 0 50px #cecece, 0 0 60px #ece2e7, 0 0 70px #e4dde1;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e0dadd, 0 0 40px #c5c0c3, 0 0 50px #c9c9c9, 0 0 60px #ece8ea, 0 0 70px #919191, 0 0 80px #f7f6f6;
+  }
 }
 
 .body-home {
     display: flex;
     height: 78vh;
     margin: 3rem 2rem;
-    filter: blur(4px);
 }
 
 h4{
@@ -421,17 +463,4 @@ h4{
     font-size: 11px;
     color: rgb(255, 255, 255);
 }
-
-
-.box-container {
-    position: absolute;
-    margin: 100px auto;
-    width: 80%;
-    height: 500px;
-    display: flex;
-    align-items: stretch;
-    box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.03);
-    color: white;
-    background-color: azure;
-  }
 

@@ -8,7 +8,7 @@ const clientId = '1064730035489087540';
     if (!RPC) return;
     RPC.setActivity({
         details: `------`,
-        state: `Launcher desde 0`,
+        state: `Jugando ⚔Night Of Red Bloom⚔`,
         startTimestamp: Date.now(),
         largeImageKey: 'beta',
         largeImageText: `beta`,

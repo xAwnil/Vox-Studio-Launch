@@ -34,6 +34,7 @@ class Home {
             let screen;
 
             let playBtn = document.querySelector('.play-btn');
+            let playDownload = document.querySelector('.downloadbutton');
             let info = document.querySelector(".text-download")
             let progressBar = document.querySelector(".progress-bar")
 
@@ -67,12 +68,14 @@ class Home {
             }
 
             playBtn.style.display = "none"
+            playDownload.style.display = "block"
             info.style.display = "block"
+            info.style.opacity = "1"
             launch.Launch(opts);
 
             launch.on('progress', (DL, totDL) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Descargando ${((DL / totDL) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Iniciando ${((DL / totDL) * 100).toFixed(0)}%`
                 ipcRenderer.send('main-window-progress', {DL, totDL})
                 progressBar.value = DL;
                 progressBar.max = totDL;
@@ -110,9 +113,7 @@ class Home {
         })
     }
     initBtn() {
-
         // for hide and show profile
-        let profilebtn = document.querySelector('.profile-btn');
         let cardprofile = document.querySelector(".cardprofile")
         let accountdelete = document.querySelector(".acount-delete")
         let cardprofiledragbar = document.querySelector(".cardprofile-dragbar")
