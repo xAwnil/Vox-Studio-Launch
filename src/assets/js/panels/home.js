@@ -87,7 +87,7 @@ class Home {
 
             launch.on('check', (e) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Verificacion ${((DL / totDL) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Verificando ${((DL / totDL) * 100).toFixed(0)}%`
                 progressBar.value = DL;
                 progressBar.max = totDL;
 
@@ -104,6 +104,7 @@ class Home {
             launch.on('close', () => {
                 if(launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-show");
                 progressBar.style.display = "none"
+                playDownload.style.display = "none"
                 info.style.display = "none"
                 playBtn.style.display = "block"
                 info.innerHTML = `Verificacion`
